@@ -1,0 +1,116 @@
+.trending_container::-webkit-scrollbar{
+    display: none;
+}
+
+.trending_img_poster {
+    box-shadow: 10px 0px 10px rgba(241, 104, 104, 0.5); /* Adjust the alpha value for softer shadow */
+  }
+
+.trending_movie_rating{
+    clip-path: polygon(0 0, 100% 0%, 100% 60%, 50% 100%, 1% 60%);
+    background-color: rgb(251, 255, 11);
+    width: 60px;
+    height: 70px;
+    border-radius: 30px;
+    position: relative;
+    top: -290px;
+    left: 130px;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    
+} 
+
+.trending_movie_rating p{
+    text-decoration: none;
+    color: red;
+    font-weight: bolder;
+    font-size: x-large;
+    list-style: none;
+    text-align: center;
+    
+
+}
+
+/* genres styling */
+.genres{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    
+}
+.genres .genre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 230px;
+    border-radius: 30px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.genres .genre p{
+    display: flex;
+    color: white;
+    font-size: xx-large;
+    justify-content: center;
+    font-weight: bolder;
+    
+}
+.genres .genre:hover{
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
+}
+.genres .thriller{
+    background-image:linear-gradient(to top, rgba(0, 0, 0, 0.9) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%), url("./banners/thriller.png");
+    
+    background-position:center;
+    background-size: cover;
+}
+
+.genres .comedy{
+    background-image:linear-gradient(to top, rgba(0, 0, 0, 0.9) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%), url("./banners/comedy.png");
+    
+    background-position:center;
+    background-size: cover;
+
+}
+
+.genres .adventure{
+    background-image:linear-gradient(to top, rgba(0, 0, 0, 0.9) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%), url("./banners/adventure.png");
+    
+    background-position:center;
+    background-size: cover;
+}
+
+.genres .action{
+    background-image:linear-gradient(to top, rgba(0, 0, 0, 0.9) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%), url("./banners/action.png");
+    
+    background-position:center;
+    background-size: cover;
+}
+
+@media screen and (min-width: 501px) and (max-width: 800px) {
+    .genres {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .genre{
+        width: auto;
+    }
+}
+
+/* For screens wider than 800px */
+@media screen and (min-width: 695px) {
+    .genres {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 805px) {
+    .genres {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
