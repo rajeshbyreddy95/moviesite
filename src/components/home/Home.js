@@ -12,14 +12,15 @@ const  Home = () => {
         setTrending(dat.filter((movie)=>movie.rating > 7.5).slice(0,10))
     },[])
 
-    useEffect(()=>{
-      setMovies(dat.slice(0,40))
-  },[])
-    
+    useEffect(() => {
+      const comedy = dat.filter((movie) => movie.genres.includes('Action')).slice(20,40);
+      setMovies(comedy);
+    }, []);
+  
   return (
     <div>
-    <div className='container'>
-      <nav className="navbar navbar-expand-lg home-navbar">
+    <div className=''>
+      <nav className="navbar navbar-expand-lg home-navbar bg-primary">
       <div className="container">
         <a className="navbar-brand home-navbar__brand" href="#">Movies Spot</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,9 +83,25 @@ const  Home = () => {
       <a className="genre adventure" href='/adventure'>
       <p>Adventure</p>
       </a>
+      <a className="genre animation" href='/animation'>
+      <p>Animation</p>
+      </a>
       
     </section>
-
+    <section className="some_action_movies">
+      <section className="some_action_movies_header d-flex p-3 justify-content-between align-items-center">
+      <h3>Action Movies</h3>
+      <a href="/action">Load More</a>
+      </section>
+      <div className="comedy_movies_list p-2">
+          {movies.map((movie) => (
+              <a key={movie.id} className="comedy_movie" href={`/detail/${movie.id}`} >
+                <img src={movie.poster_path} alt={movie.title} />
+                <p class="text-truncate" style={{width: '5ch'}}>{movie.title}</p>
+              </a>
+          ))}
+        </div>
+    </section>
   </div>
   );
 }

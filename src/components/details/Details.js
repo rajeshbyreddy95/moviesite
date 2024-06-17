@@ -38,12 +38,22 @@ const Details = () => {
             key={movie.id}
           >
             <div className="movie_details_deep container ">
-              <h1 className="display-4 fixed  sticky-top bg-primary">{movie.title}</h1>
+            {movie.trailers.map((m)=>(
+                  <a href={m.videoUrl} target='_blank' style={{
+                  }}
+                   >
+                    <button className='btn btn-danger' style={{
+                      
+                    }}>Watch Trailer</button>
+                  </a>
+                ))}
+              <h1 className="display-4 ">{movie.title}</h1>
               <p className="lead">{movie.overview}</p>
               <div className="movie_details_genres ">
                 {movie.genres.map((mg, index) => (
                   <button className='btn btn-primary m-2' key={index}>{mg}</button>
                 ))}
+                
               </div>
               <div className="movie_details_cast  ">
               <h3>Cast</h3>

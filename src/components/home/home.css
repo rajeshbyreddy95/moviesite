@@ -33,84 +33,90 @@
 }
 
 /* genres styling */
-.genres{
-    display: grid;
-    grid-template-columns: 1fr;
+/* General styles for the genre section */
+.genres.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap as needed */
+    padding: 20px 0;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-
-    
-}
-.genres .genre{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    height: 230px;
-    border-radius: 30px;
-    text-decoration: none;
-    cursor: pointer;
-}
-.genres .genre p{
-    display: flex;
+  }
+  
+  .genre {
+    position: relative;
+    width: calc(20% - 20px); /* 5 items per row on large screens */
+    height: 200px; /* Adjust the height as needed */
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
     color: white;
-    font-size: xx-large;
-    justify-content: center;
-    font-weight: bolder;
-    
-}
-.genres .genre:hover{
-    transform: scale(1.1);
-    transition: all 0.2s ease-in-out;
-}
-.genres .thriller{
-    background-image:linear-gradient(to top, rgba(0, 0, 0, 0.9) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%), url("./banners/thriller.png");
-    
-    background-position:center;
+    transition: transform 0.3s;
+    text-decoration: none;
+  }
+  
+  .genre:hover {
+    transform: scale(1.05);
+  }
+  
+  .genre p {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 10px 10px;
+    font-size: 1.2rem; /* Adjust the font size as needed */
+  }
+  
+  .genres .thriller {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%), url("./banners/thriller.png");
+    background-position: center;
     background-size: cover;
-}
-
-.genres .comedy{
-    background-image:linear-gradient(to top, rgba(0, 0, 0, 0.9) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%), url("./banners/comedy.png");
-    
-    background-position:center;
+  }
+  
+  .genres .comedy {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%), url("./banners/comedy.png");
+    background-position: center;
     background-size: cover;
-
-}
-
-.genres .adventure{
-    background-image:linear-gradient(to top, rgba(0, 0, 0, 0.9) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%), url("./banners/adventure.png");
-    
-    background-position:center;
+  }
+  
+  .genres .adventure {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%), url("./banners/adventure.png");
+    background-position: center;
     background-size: cover;
-}
-
-.genres .action{
-    background-image:linear-gradient(to top, rgba(0, 0, 0, 0.9) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%), url("./banners/action.png");
-    
-    background-position:center;
+  }
+  
+  .genres .action {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%), url("./banners/action.png");
+    background-position: center;
     background-size: cover;
-}
-
-@media screen and (min-width: 501px) and (max-width: 800px) {
-    .genres {
-        grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .genres .animation {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%), url("./banners/animation.png");
+    background-position: center;
+    background-size: cover;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 576px) {
+    .genre {
+      width: calc(50% - 20px); /* 2 items per row on mobile */
     }
-    .genre{
-        width: auto;
+  }
+  
+  @media (min-width: 577px) and (max-width: 1199px) {
+    .genre {
+      width: calc(33.333% - 20px); /* 3 items per row on tablets */
     }
-}
-
-/* For screens wider than 800px */
-@media screen and (min-width: 695px) {
-    .genres {
-        grid-template-columns: repeat(3, 1fr);
+  }
+  
+  @media (min-width: 1200px) {
+    .genre {
+      width: calc(20% - 20px); /* 5 items per row on large screens */
     }
-}
-
-@media screen and (min-width: 805px) {
-    .genres {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
+  }
+  
